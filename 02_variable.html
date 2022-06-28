@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable</title>
+</head>
+<body>
+    
+</body>
+<script>
+   'use strict' // 嚴謹模式
+    //var num = 1 // 定義箱子(變數)
+    //var num = 2 // 錯誤狀態 沒有報錯
+
+    let box = 'test' //用let定義box
+    box = 'hello world' //替換成 hello world
+
+    //const account = 'pan' // 用const定義account
+    // account = 'hongcheng'
+
+    let birthday = '0317'
+    let name = '潘宏誠'
+    let x = 5
+    let y = 8
+
+    //console.log(num)
+    console.log(box)
+    //console.log(account)
+    console.log(birthday)
+    console.log('姓名:'+name) //字串相加
+    console.log(x+y)
+    console.log('我的名子是' + name + ',今天是' + birthday )
+    console.log(`我的名子是${name},今天是${birthday}`)
+
+    let age = 65
+
+    if( age >= 18 ){
+        console.log(`年齡為${age},可以喝酒`)
+    }else{
+        console.log(`年齡為${age},不可以喝酒`)
+    }//if age end
+
+    let account = 'hongchengpan'
+    let password = '123456'
+
+    if(account == 'hongchengpan' && password == '123456'){
+        console.log('成功登入')
+    }else{
+        console.log('帳號或密碼輸入錯誤,請重新輸入')
+    }//if account password end
+
+    let area = '台中'
+
+    if( age <= 12 || age >= 65 || area == '台北'){
+        console.log('優待票180元')
+    }else{
+        console.log('一般遊客200元')
+    } // if ticket end
+
+    let day = 5
+    if(day == 1){
+        console.log('星期一')
+    }else if(day == 2){
+        console.log('星期二')
+    }else if(day == 3){
+        console.log('星期三')
+    }else if(day == 4){
+        console.log('星期四')
+    }else if(day == 5){
+        console.log('星期五')
+    }else if(day == 6){
+        console.log('星期六')
+    }else if(day == 0){
+        console.log('星期日')
+    }
+
+    //累加1
+    let num = 1
+    let num2 = 1
+    // num = 0
+    // console.log(num)
+    // num=num + 1 // num=1
+    // num++
+    // console.log(num)
+
+    // for(let x=1; x <= 9; x++){
+    //     for(let y=1; y <= 9; y++){
+    //         console.log(x*y)
+    //     }
+    // }//九九乘法表
+    //  for(let i=0; i < 10;i++){
+    //      console.log('數字',i)
+    //  }//for end
+    //  for(let i=10; i > 0; i--){
+    //      console.log('數字遞減',i)
+    //  }//for end
+
+    let food = ['蛋','豆','魚','肉','飯','菜']
+    console.log('食物種類數量',food.length)
+    // console.log( food[0])
+    // console.log( food[1])
+    // console.log( food[2])
+    // console.log( food[3])
+    for(let i=0; i < food.length ; i++){
+        //console.log('編號:' + (i+1) + '吃:' +food[i])
+        console.log(`編號${i+1},吃:${food[i]}`)//字串模板
+    }
+
+    let pet= {
+        name: '米妮',
+        age: 14,
+        color:'red',
+        bark:function(){
+            alert( '汪' )
+        }//bark end
+    }//pet end
+    console.log(pet.name)// 點記法
+    console.log(pet['name'])//括弧記法
+    
+    let user = {
+        name: 'pan',
+        account: '123456',
+        password: '987654',
+        moblie: '0918321533',
+        address: '彰化',
+    }
+    console.log(user.moblie)
+    //pet.bark()
+    // alert('彈出視窗')
+</script>
+</html>

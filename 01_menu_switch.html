@@ -27,17 +27,22 @@
     </nav>
     <!-- 等到HTML都讀完才執行 -->
     <script>
-        document.getElementById('btn-nav-toggle').addEventListener('click',openNav)
+        let btnNavToggle = document.getElementById('btn-nav-toggle')
+        let primaryNavigation = document.getElementById('primary-navigation')
+        
 
+        btnNavToggle.addEventListener('click',openNav)
         // 函式名稱
         function openNav(){
             console.log('點按鈕打開主導覽')
-            if(document.getElementById('primary-navigation').classList.contains('active') == true){
+            if(primaryNavigation.classList.contains('active') == true){
                 //假如主導覽有active類別的時候執行
-                document.getElementById('primary-navigation').classList.remove('active')
+                primaryNavigation.classList.remove('active')
+                btnNavToggle.textContent = 'menu'
             }else{
                 //假如主導覽沒有active類別的時候執行
-                document.getElementById('primary-navigation').classList.add('active')
+                primaryNavigation.classList.add('active')
+                btnNavToggle.textContent = 'X'
 
             }// openNavif end
         } //openNav end
