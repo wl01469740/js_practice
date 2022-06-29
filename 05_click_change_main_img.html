@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 95%;
+            max-width: 1140px;
+        }
+        .img-fluid{
+            width: 100%;
+        }
+        .main-img{
+            margin-bottom: 10px;
+        }
+        .thumbnails{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .thumbnails>img{
+            width: 100px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border:2px solid rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        .thumbnails>img.active{
+            border:2px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-img">
+            <img class="img-fluid" src="public/images/LINE.png" alt="">
+        </div>
+        <p id="product-description">line</p>
+        <div class="thumbnails">
+            <img src="public/images/LINE.png" alt="line">
+            <img src="public/images/phone.png" alt="phone">
+            <img src="public/images/TFX.png" alt="tfx">
+            <img src="public/images/mail.png" alt="mail">
+        </div>
+    </div>
+
+
+
+
+    <!-- jquery主程式 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.thumbnails>img').on('click', function(e){
+            // 主圖src屬性(attribute) 替換成 當前點擊縮圖的src
+            $('.main-img>img').attr('src', $(this).attr('src'))
+            $('#product-description').text( $(this).attr('alt') )
+            // html():包含標籤  text():純文字 val():表單值
+            // 當前點擊縮圖套用active
+            $(this).addClass('active')
+            // 當前點擊縮圖以外的縮圖移除active
+            $(this).siblings().removeClass('active')
+
+        }) // .thumbnails>img end
+
+
+    </script>
+</body>
+
+</html>

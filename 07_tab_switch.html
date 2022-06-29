@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-link{
+            display: flex;
+        }
+        .tab-link>a{
+            text-decoration: none;
+            width: 31%;
+            display: block;
+            background-color: aqua;
+            line-height: 40px;
+            color: blue;    
+            text-align: center;
+            margin: 1%;
+        }
+        .tab-link>a.active{
+            background-color: rgb(255, 237, 154);
+        }
+        .tab-content{
+            display: none;
+        }
+        .tab-content.active{
+            display: block;
+        }
+        .img-fluid{
+            width: 100%;
+        }
+        .container{
+            width: 95%;
+            max-width: 1140px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .tab-link>a[href="#tab$"]*3 -->
+    <div class="tab-link">
+        <a href="#tab1" class="active">商品資訊</a>
+        <a href="#tab2">出價紀錄</a>
+        <a href="#tab3">問與答</a>
+    </div>
+
+    <!-- #tab${內容$}*3 -->
+    <div id="tab1" class="tab-content active">
+        <img src="public/images/LOGO4.png" class="img-fluid" alt="">
+        <p>
+            <ul>
+                <li>真</li>
+                <li>豪</li>
+                <li>洗</li>
+                <li>LO</li>
+                <li>GO</li>
+            </ul>
+        </p>
+    </div>
+    <div id="tab2" class="tab-content">內容2</div>
+    <div id="tab3" class="tab-content">內容3</div>
+
+
+<!-- jquery主程式 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    $('.tab-link>a').on('click', function(){
+        $(this).addClass('active')
+        $(this).siblings().removeClass('active')
+
+        $( $(this).attr('href') ).addClass('active')
+        $( $(this).attr('href') ).siblings().removeClass('active')
+    })// .tab-link>a end
+</script>
+
+</body>
+</html>
